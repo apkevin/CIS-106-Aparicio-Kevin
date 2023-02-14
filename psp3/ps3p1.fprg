@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-11 11:42:43 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMTE7MTE6Mjc6MjQgUE07MjQ3Mw=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMTE7MTE6NDI6NDMgUE07MTsyNTc5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="score1" type="Integer" array="False" size=""/>
+            <declare name="score2" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <input variable="score1"/>
+            <input variable="score2"/>
+            <assign variable="total" expression="(score1 * .40) + (score2 * .60)"/>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
