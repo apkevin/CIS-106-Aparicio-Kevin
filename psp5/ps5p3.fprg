@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 04:59:15 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDM6MTM6MzMgUE07MjQ2OQ=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDQ6NTk6MTUgUE07NzsyNTk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <declare name="shipping" type="Real" array="False" size=""/>
+            <declare name="freeShipping" type="String" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="extendedTotal" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <input variable="cost"/>
+            <assign variable="total" expression="cost * quantity"/>
+            <if expression="total &gt;= 50.00">
+                <then>
+                    <assign variable="shipping" expression="0"/>
+                    <assign variable="extendedTotal" expression="total"/>
+                    <output expression="&quot;Total: $&quot; &amp; extendedTotal" newline="True"/>
+                    <output expression="&quot;Shipping: Free&quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="shipping" expression="25.00"/>
+                    <assign variable="extendedTotal" expression="total + shipping"/>
+                    <output expression="&quot;Total: $&quot; &amp; extendedTotal" newline="True"/>
+                    <output expression="&quot;Shipping: $&quot; &amp; shipping" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

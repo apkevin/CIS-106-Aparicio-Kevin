@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 02:58:37 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDE6Mjg6NTQgUE07MjQ3Ng=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDI6NTg6MzcgUE07MjsyNTkw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <input variable="quantity"/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <if expression="quantity &gt;= 1000">
+                <then>
+                    <assign variable="price" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="price" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="extendedPrice" expression="price * quantity"/>
+            <assign variable="tax" expression="extendedPrice * .07"/>
+            <assign variable="total" expression="extendedPrice + tax"/>
+            <output expression="&quot;Quantity: &quot; &amp; quantity &amp;&#13;&#10;ToChar(13) &amp;&#13;&#10;&quot;Unit Price: &quot; &amp; price &amp;&#13;&#10;ToChar(13) &amp;&#13;&#10;&quot;Extended Price: &quot; &amp; extendedPrice &amp;&#13;&#10;ToChar(13) &amp;&#13;&#10;&quot;Tax: &quot; &amp; tax &amp;&#13;&#10;ToChar(13) &amp;&#13;&#10;&quot;Total: &quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

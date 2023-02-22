@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-20 08:06:59 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDc6MzQ6MzYgUE07MjQ3OQ=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjA7MDg6MDY6NTkgUE07MzsyNTk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="dependents" type="Integer" array="False" size=""/>
+            <declare name="grossIncome" type="Real" array="False" size=""/>
+            <declare name="adjusted" type="Real" array="False" size=""/>
+            <declare name="taxRate" type="Real" array="False" size=""/>
+            <declare name="incomeTax" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="dependents"/>
+            <input variable="grossIncome"/>
+            <assign variable="adjusted" expression="grossIncome - (dependents * 1200)"/>
+            <if expression="adjusted &gt;= 50000">
+                <then>
+                    <assign variable="taxRate" expression=".2"/>
+                    <assign variable="incomeTax" expression="adjusted * taxRate"/>
+                    <if expression="incomeTax &lt; 0">
+                        <then>
+                            <assign variable="incomeTax" expression="100"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="taxRate" expression=".1"/>
+                    <assign variable="incomeTax" expression="adjusted * taxRate"/>
+                    <if expression="incomeTax &lt; 0">
+                        <then>
+                            <assign variable="incomeTax" expression="100"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Last Name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Gross Income $&quot; &amp; grossIncome" newline="True"/>
+            <output expression="&quot;Number of Dependents: &quot; &amp; dependents" newline="True"/>
+            <output expression="&quot;Adjusted Gross Income: $&quot; &amp; adjusted" newline="True"/>
+            <output expression="&quot;Income Tax $&quot; &amp; incomeTax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
