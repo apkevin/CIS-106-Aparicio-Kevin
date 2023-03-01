@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-27 11:52:14 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjc7MDc6NDI6MjggUE07MjQ4Ng=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjc7MTE6NTI6MTQgUE07MjsyNTg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extPrice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <if expression="quantity &gt;= 10000">
+                <then>
+                    <assign variable="price" expression="10.00"/>
+                </then>
+                <else>
+                    <if expression="quantity &gt;= 5000 and quantity &lt; 10000">
+                        <then>
+                            <assign variable="price" expression="20.00"/>
+                        </then>
+                        <else>
+                            <if expression="quantity &lt; 5000">
+                                <then>
+                                    <assign variable="price" expression="30.00"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="extPrice" expression="price * quantity"/>
+            <assign variable="tax" expression="extPrice * .07"/>
+            <assign variable="total" expression="extPrice + tax"/>
+            <output expression="&quot;Quantity : &quot; &amp; quantity &amp; &quot;\n&quot;" newline="True"/>
+            <output expression="&quot;Price: $&quot; &amp; price" newline="True"/>
+            <output expression="&quot;Subtotal: $&quot; &amp; extPrice" newline="True"/>
+            <output expression="&quot;Tax: $&quot; &amp; tax" newline="True"/>
+            <output expression="&quot;Total: $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

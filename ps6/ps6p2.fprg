@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-28 04:26:32 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjg7MDE6MzY6MjQgUE07MjQ4MA=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjg7MDQ6MjY6MzIgUE07NDsyNTky"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="part" type="Integer" array="False" size=""/>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="unitPrice" type="Real" array="False" size=""/>
+            <input variable="part"/>
+            <input variable="quantity"/>
+            <if expression="part = 10 or part == 55">
+                <then>
+                    <assign variable="unitPrice" expression="1.00"/>
+                </then>
+                <else>
+                    <if expression="part = 99">
+                        <then>
+                            <assign variable="unitPrice" expression="2.00"/>
+                        </then>
+                        <else>
+                            <if expression="part = 80 or part = 70">
+                                <then>
+                                    <assign variable="unitPrice" expression="3.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="unitPrice" expression="5.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="unitPrice * quantity"/>
+            <output expression="part" newline="True"/>
+            <output expression="quantity" newline="True"/>
+            <output expression="unitPrice" newline="True"/>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

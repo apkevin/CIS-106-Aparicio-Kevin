@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-28 06:22:26 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjg7MDY6MTE6NTIgUE07MjQ3OQ=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDItMjg7MDY6MjI6MjYgUE07MjsyNTkx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="salary" type="Real" array="False" size=""/>
+            <declare name="jobLevel" type="Integer" array="False" size=""/>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <declare name="bonusRate" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="jobLevel"/>
+            <input variable="salary"/>
+            <if expression="jobLevel &gt; 10">
+                <then>
+                    <assign variable="bonusRate" expression=".25"/>
+                </then>
+                <else>
+                    <if expression="jobLevel &gt;= 5 and jobLevel &lt;= 9">
+                        <then>
+                            <assign variable="bonusRate" expression=".2"/>
+                        </then>
+                        <else>
+                            <assign variable="bonusRate" expression=".1"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="bonus" expression="salary * bonusRate"/>
+            <output expression="lastName" newline="True"/>
+            <output expression="bonus" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
