@@ -1,0 +1,9 @@
+Chapstick
+4
+4.50
+Pen
+16
+2.36
+Printer Paper
+60
+0.13

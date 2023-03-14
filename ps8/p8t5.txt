@@ -1,0 +1,15 @@
+Muller
+I
+15
+Mann
+I
+12
+Patrik
+O
+7
+Hogan
+I 
+9
+Moore
+O
+6

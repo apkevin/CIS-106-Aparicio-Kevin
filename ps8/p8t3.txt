@@ -1,0 +1,8 @@
+Johnson
+78000.00
+Matthews
+103600.00
+Lancaster
+34850.00
+Goodson
+63700.00
