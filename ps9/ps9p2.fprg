@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-18 02:14:01 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDMtMTg7MDE6NTM6MzYgUE07MjQ4Mg=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDMtMTg7MDI6MTQ6MDEgUE07MjsyNTgx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="hits" type="Real" array="False" size=""/>
+            <declare name="bats" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="hits"/>
+            <input variable="bats"/>
+            <assign variable="AVG" expression="compavg(hits, bats)"/>
+            <output expression="&quot;Player: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Batting Average: &quot; &amp; avg" newline="True"/>
+        </body>
+    </function>
+    <function name="compavg" type="Real" variable="avg">
+        <parameters>
+            <parameter name="hits" type="Real" array="False"/>
+            <parameter name="bats" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="hits / bats"/>
+        </body>
+    </function>
+</flowgorithm>

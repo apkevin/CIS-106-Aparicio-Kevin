@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kpkev"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-03-19 12:23:41 PM"/>
+        <attribute name="created" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDMtMTk7MTE6MDk6MzkgQU07MjQ3Mw=="/>
+        <attribute name="edited" value="a3BrZXY7S0VWSU5TLVBDOzIwMjMtMDMtMTk7MTI6MjM6NDEgUE07NDsyNTg5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="creditHours" type="Real" array="False" size=""/>
+            <declare name="district" type="String" array="False" size=""/>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="creditHours"/>
+            <input variable="district"/>
+            <call expression="compTuition(creditHours, district)"/>
+            <assign variable="tuition" expression="compTuition(creditHours, district)"/>
+            <output expression="lastName" newline="True"/>
+            <output expression="&quot;Tuition Total: $&quot; &amp; tuition" newline="True"/>
+        </body>
+    </function>
+    <function name="compTuition" type="Real" variable="tuition">
+        <parameters>
+            <parameter name="creditHours" type="Real" array="False"/>
+            <parameter name="district" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <if expression="district == &quot;I&quot;">
+                <then>
+                    <assign variable="tuition" expression="250.00 * creditHours"/>
+                </then>
+                <else>
+                    <assign variable="tuition" expression="550.00 * creditHours"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
